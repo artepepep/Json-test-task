@@ -1,5 +1,6 @@
 import json
 from typing import TypedDict
+import os
 
 file_path = '/Users/mac/test-task-json/Json-test-task/data/data.json' # json file path
 allowed_animals = {'dog', 'cat', 'cow', 'rat', 'alien'}
@@ -9,7 +10,7 @@ class Data(TypedDict): # annotate dict with json data
     animal: str
 
 
-def read_json(json_path: str) -> Data:
+def read_json(json_path: str | os.PathLike) -> Data:
     """
     Parses a JSON file and returns a dictionary with validated data.
 
